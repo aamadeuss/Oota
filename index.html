@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oota</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <script src="index.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
-
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body class="bg-slate-800 text-zinc-300 absolute m-auto left-1/2 -translate-x-1/2 w-full md:w-[640px]">
     <div class="menu-page">
@@ -80,5 +81,11 @@
         </div>
     </div>
     
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        }
+    </script>
+        
 </body>
 </html>
