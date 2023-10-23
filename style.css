@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+
+.font-satisfy{
+    font-family: 'Satisfy', cursive;
+}
+
+.font-noto{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.font-josefin{
+    font-family: 'Josefin Sans', sans-serif;
+}
