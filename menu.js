@@ -851,11 +851,11 @@ export const menu_time = {
     "time":{
         "breakfast": {
             "weekday": {
-                "start": "7:00 am",
+                "start": "7:30 am",
                 "end": "9:45 am"
             },
             "weekend": {
-                "start": "7:00 am",
+                "start": "7:30 am",
                 "end": "10:00 am"
             }
         },
