@@ -6,7 +6,7 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Pongal",
+                "name": "Sabudana upma",
                 "veg": true
             },
             "2": {
@@ -32,7 +32,7 @@ export const menu = {
                 "veg": true
             },
             "2": {
-                "name": "Grilled and sauted aubergine",
+                "name": "Urulai podimas",
                 "veg": true
             },
             "3": {
@@ -60,17 +60,17 @@ export const menu = {
                 "veg": true
             },
             "9": {
-                "name": "Milk Peda",
+                "name": "Kalakand",
                 "veg": true
             }
         },
         "snacks": {
             "0": {
-                "name": "Pani puri",
+                "name": "Pani Puri",
                 "veg": true
             },
             "1": {
-                "name": "Meetha & Teekha pani",
+                "name": "Theeka and meetha pani",
                 "veg": true
             },
             "2": {
@@ -100,7 +100,7 @@ export const menu = {
                 "veg": true
             },
             "5": {
-                "name": "Tomata + Coconut Chutney",
+                "name": "Tomato + Coconut Chutney",
                 "veg": true
             },
             "6": {
@@ -108,7 +108,7 @@ export const menu = {
                 "veg": true
             },
             "7": {
-                "name": "Buttermilk",
+                "name": "Lassi",
                 "veg": true
             },
             "8": {
@@ -124,7 +124,7 @@ export const menu = {
     "tuesday": {
         "breakfast": {
             "0": {
-                "name": "Podi Masala dosa",
+                "name": "Aloo Onion Paratha",
                 "veg": true
             },
             "1": {
@@ -132,11 +132,11 @@ export const menu = {
                 "veg": true
             },
             "2": {
-                "name": "veg sambar",
+                "name": "Curd",
                 "veg": true
             },
             "3": {
-                "name": "coconut chutney",
+                "name": "Peanut Garlic chutney",
                 "veg": true
             }
         },
@@ -146,11 +146,11 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Vegetable Medley Delight",
+                "name": "Subz diwani handi",
                 "veg": true
             },
             "2": {
-                "name": "cabbage poriyal",
+                "name": "banana poriyal",
                 "veg": true
             },
             "3": {
@@ -170,7 +170,7 @@ export const menu = {
                 "veg": true
             },
             "7": {
-                "name": "Mix veg raita",
+                "name": "Curd",
                 "veg": true
             },
             "8": {
@@ -178,13 +178,13 @@ export const menu = {
                 "veg": true
             },
             "9": {
-                "name": "Rice Kheer",
+                "name": "Kala jamun",
                 "veg": true
             }
         },
         "snacks": {
             "0": {
-                "name": "Samosa",
+                "name": "samosa",
                 "veg": true
             },
             "1": {
@@ -230,7 +230,7 @@ export const menu = {
                 "veg": true
             },
             "8": {
-                "name": "Green salad",
+                "name": "Israeli salad",
                 "veg": true
             },
             "9": {
@@ -242,7 +242,133 @@ export const menu = {
     "wednesday": {
         "breakfast": {
             "0": {
-                "name": "Aloo Onion Paratha",
+                "name": "Bedmi puri",
+                "veg": true
+            },
+            "1": {
+                "name": "Kara bhat",
+                "veg": true
+            },
+            "2": {
+                "name": "Aloo ki Subzi",
+                "veg": true
+            },
+            "3": {
+                "name": "Green Mint Chutney",
+                "veg": true
+            },
+            "4": {
+                "name": "Egg bhurji",
+                "veg": false
+            }
+        },
+        "lunch": {
+            "0": {
+                "name": "Pudina chapati",
+                "veg": true
+            },
+            "1": {
+                "name": "Cabbage poriyal",
+                "veg": true
+            },
+            "2": {
+                "name": "Bhindi  tomato gravi",
+                "veg": true
+            },
+            "3": {
+                "name": "Donne biryani",
+                "veg": true
+            },
+            "4": {
+                "name": "Plain Rice",
+                "veg": true
+            },
+            "5": {
+                "name": "Arhar Daal",
+                "veg": true
+            },
+            "6": {
+                "name": "pumpkin sambar",
+                "veg": true
+            },
+            "7": {
+                "name": "Burani raita",
+                "veg": true
+            },
+            "8": {
+                "name": "GREEN SALAD",
+                "veg": true
+            },
+            "9": {
+                "name": "assorted pastry",
+                "veg": true
+            }
+        },
+        "snacks": {
+            "0": {
+                "name": "coleslaw sandwich",
+                "veg": true
+            },
+            "1": {
+                "name": "Tomato Sauce",
+                "veg": true
+            },
+            "2": {
+                "name": "TEA/COFFEE/MILK",
+                "veg": true
+            }
+        },
+        "dinner": {
+            "0": {
+                "name": "Tawa paratha",
+                "veg": true
+            },
+            "1": {
+                "name": "French Fries",
+                "veg": true
+            },
+            "2": {
+                "name": "Jeera Mutter Pulao",
+                "veg": true
+            },
+            "3": {
+                "name": "PLAIN RICE",
+                "veg": true
+            },
+            "4": {
+                "name": "DAL MAKHANI",
+                "veg": true
+            },
+            "5": {
+                "name": "Drumstick SAMBAR",
+                "veg": true
+            },
+            "6": {
+                "name": "mix veg raita",
+                "veg": true
+            },
+            "7": {
+                "name": "Tossed salad",
+                "veg": true
+            },
+            "8": {
+                "name": "Semiya Payasam",
+                "veg": true
+            },
+            "9": {
+                "name": "Paneer Butter Masala",
+                "veg": true
+            },
+            "10": {
+                "name": "Chicken Butter masala",
+                "veg": false
+            }
+        }
+    },
+    "thursday": {
+        "breakfast": {
+            "0": {
+                "name": "Podi Masala dosa",
                 "veg": true
             },
             "1": {
@@ -250,16 +376,12 @@ export const menu = {
                 "veg": true
             },
             "2": {
-                "name": "Curd",
+                "name": "veg sambar",
                 "veg": true
             },
             "3": {
-                "name": "Peanut Garlic chutney",
+                "name": "coconut chutney",
                 "veg": true
-            },
-            "4": {
-                "name": "Egg bhurji",
-                "veg": false
             }
         },
         "lunch": {
@@ -296,133 +418,11 @@ export const menu = {
                 "veg": true
             },
             "8": {
-                "name": "Chickpeas Salad",
+                "name": "Black Chana salad w vegatable",
                 "veg": true
             },
             "9": {
                 "name": "Ice Cream",
-                "veg": true
-            }
-        },
-        "snacks": {
-            "0": {
-                "name": "Onion Kachori",
-                "veg": true
-            },
-            "1": {
-                "name": "chutney",
-                "veg": true
-            },
-            "2": {
-                "name": "TEA/COFFEE/MILK",
-                "veg": true
-            }
-        },
-        "dinner": {
-            "0": {
-                "name": "Lacha Paratha",
-                "veg": true
-            },
-            "1": {
-                "name": "French Fries",
-                "veg": true
-            },
-            "2": {
-                "name": "Jeera Mutter Pulao",
-                "veg": true
-            },
-            "3": {
-                "name": "PLAIN RICE",
-                "veg": true
-            },
-            "4": {
-                "name": "DAL MAKHANI",
-                "veg": true
-            },
-            "5": {
-                "name": "Drumstick SAMBAR",
-                "veg": true
-            },
-            "6": {
-                "name": "mix veg raita",
-                "veg": true
-            },
-            "7": {
-                "name": "Tossed salad",
-                "veg": true
-            },
-            "8": {
-                "name": "Rasgulla",
-                "veg": true
-            },
-            "9": {
-                "name": "Paneer Butter Masala",
-                "veg": true
-            },
-            "10": {
-                "name": "Chicken Butter masala",
-                "veg": false
-            }
-        }
-    },
-    "thursday": {
-        "breakfast": {
-            "0": {
-                "name": "Bedmi puri",
-                "veg": true
-            },
-            "1": {
-                "name": "Kara bhat",
-                "veg": true
-            },
-            "2": {
-                "name": "Aloo ki Subzi",
-                "veg": true
-            },
-            "3": {
-                "name": "Green Mint Chutney",
-                "veg": true
-            }
-        },
-        "lunch": {
-            "0": {
-                "name": "Pudina chapati",
-                "veg": true
-            },
-            "1": {
-                "name": "Capsicum Masala",
-                "veg": true
-            },
-            "2": {
-                "name": "Bhindi Do Pyaza",
-                "veg": true
-            },
-            "3": {
-                "name": "Hyderabadi dum biryani",
-                "veg": true
-            },
-            "4": {
-                "name": "Plain Rice",
-                "veg": true
-            },
-            "5": {
-                "name": "Arhar Daal",
-                "veg": true
-            },
-            "6": {
-                "name": "pumpkin sambar",
-                "veg": true
-            },
-            "7": {
-                "name": "Burani raita",
-                "veg": true
-            },
-            "8": {
-                "name": "GREEN SALAD",
-                "veg": true
-            },
-            "9": {
-                "name": "Assoreted PASTRY",
                 "veg": true
             }
         },
@@ -446,11 +446,11 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Aloo Gobi Mutter",
+                "name": "Aloo Gobi Mutter (home style)",
                 "veg": true
             },
             "2": {
-                "name": "Hot and sour soup",
+                "name": "vampire blood tomato soup",
                 "veg": true
             },
             "3": {
@@ -462,7 +462,7 @@ export const menu = {
                 "veg": true
             },
             "5": {
-                "name": "Live Dal Tadka",
+                "name": "Dal Tadka",
                 "veg": true
             },
             "6": {
@@ -478,7 +478,7 @@ export const menu = {
                 "veg": true
             },
             "9": {
-                "name": "Semiya Payasam",
+                "name": "Suji Halwa",
                 "veg": true
             }
         }
@@ -486,11 +486,11 @@ export const menu = {
     "friday": {
         "breakfast": {
             "0": {
-                "name": "Pesarattu",
+                "name": "Moong dal chila",
                 "veg": true
             },
             "1": {
-                "name": "Cut fruits",
+                "name": "Cut fruit",
                 "veg": true
             },
             "2": {
@@ -508,15 +508,15 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Veg Jalfrezi",
+                "name": "Subz hyderabady",
                 "veg": true
             },
             "2": {
-                "name": "Chow chow Poriyal",
+                "name": "Gutti Venkaya",
                 "veg": true
             },
             "3": {
-                "name": "Green Peas pulao",
+                "name": "Lemon Rice",
                 "veg": true
             },
             "4": {
@@ -540,7 +540,7 @@ export const menu = {
                 "veg": true
             },
             "9": {
-                "name": "Rasmalai",
+                "name": "Rice Kheer",
                 "veg": true
             }
         },
@@ -564,11 +564,11 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Achari Subzi",
+                "name": "Corn palak masala",
                 "veg": true
             },
             "2": {
-                "name": "Tawa Vegetables",
+                "name": "Aloo fry",
                 "veg": true
             },
             "3": {
@@ -584,15 +584,15 @@ export const menu = {
                 "veg": true
             },
             "6": {
-                "name": "MIX VEG RAITA",
+                "name": "Raita",
                 "veg": true
             },
             "7": {
-                "name": "Tabbouleh salad",
+                "name": "Green salad",
                 "veg": true
             },
             "8": {
-                "name": "gujiya",
+                "name": "Milk Peda(Sweet)",
                 "veg": true
             },
             "9": {
@@ -654,7 +654,7 @@ export const menu = {
                 "veg": true
             },
             "7": {
-                "name": "Curd",
+                "name": "Buttermilk",
                 "veg": true
             },
             "8": {
@@ -668,14 +668,10 @@ export const menu = {
         },
         "snacks": {
             "0": {
-                "name": "Onion Kachori",
+                "name": "Paprdi chat",
                 "veg": true
             },
             "1": {
-                "name": "Imly Chutney",
-                "veg": true
-            },
-            "2": {
                 "name": "TEA/COFFEE/MILK",
                 "veg": true
             }
@@ -686,11 +682,11 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Corn Masala",
+                "name": "Sev Tomato Curry",
                 "veg": true
             },
             "2": {
-                "name": "Home Style Mixg veg curry",
+                "name": "Home Style Mix veg curry",
                 "veg": true
             },
             "3": {
@@ -734,7 +730,7 @@ export const menu = {
                 "veg": true
             },
             "2": {
-                "name": "Tomato Chutney",
+                "name": "Tomato chutney",
                 "veg": true
             },
             "3": {
@@ -790,10 +786,6 @@ export const menu = {
                 "veg": true
             },
             "1": {
-                "name": "Lemonade",
-                "veg": true
-            },
-            "2": {
                 "name": "TEA/COFFEE/MILK",
                 "veg": true
             }
@@ -824,7 +816,7 @@ export const menu = {
                 "veg": true
             },
             "6": {
-                "name": "Plain ButterMilk",
+                "name": "Curd",
                 "veg": true
             },
             "7": {
@@ -832,7 +824,7 @@ export const menu = {
                 "veg": true
             },
             "8": {
-                "name": "Hot Chcocolate",
+                "name": "Rasmalai",
                 "veg": true
             },
             "9": {
@@ -855,7 +847,7 @@ export const menu_time = {
                 "end": "9:45 am"
             },
             "weekend": {
-                "start": "7:30 am",
+                "start": "7:45 am",
                 "end": "10:00 am"
             }
         },
@@ -882,7 +874,7 @@ export const menu_time = {
         "dinner": {
             "weekday": {
                 "start": "7:30 pm",
-                "end": "9:15 pm "
+                "end": "9:30 pm "
             },
             "weekend": {
                 "start": "7:30 pm",
