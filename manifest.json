@@ -13,5 +13,6 @@
             "src": "oota-icon-512x512.png",
             "sizes": "512x512"
         }
-    ]
+    ],
+    "version": "0.0.3"
 }
