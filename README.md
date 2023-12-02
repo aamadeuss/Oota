@@ -1,3 +1,3 @@
-# Oota
+# SPE Final Project
 ---
-Frontend for the Oota or - food menu feedback application.
+Food menu application.
