@@ -1,0 +1,31 @@
+---
+- name: Deploy Docker images
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Copy docker-compose file
+      copy:
+        src: docker-compose.yml
+        dest: ./docker-compose.yml
+    - name: Print current working directory
+      command: pwd
+    - name: Check docker-compose version
+      command: docker-compose --version
+
+    - name: Pull docker images
+      command: docker-compose -f docker-compose.yml pull
+
+    - name: Debug docker-compose output
+      debug:
+        var: output.stdout_lines
+      when: output is defined
+
+    - name: Create docker containers
+      command: docker-compose -f docker-compose.yml up --no-start
+
+    - name: Run docker containers in detached mode
+      command: docker-compose -f docker-compose.yml up -d
+
+    - name: Prune the dangling docker images
+      command: docker image prune --force
