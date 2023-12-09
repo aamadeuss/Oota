@@ -5,17 +5,11 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
-    networks:
-      foodmenu-network:
-        ipv4_address: 172.18.0.2
   foodmenu-backend:
     image: aamadeuss/foodmenu-backend:latest
     container_name: foodmenu-backend
     stdin_open: true
     ports:
       - "5000:5000"
-    networks:
-      foodmenu-network:
-        ipv4_address: 172.18.0.3
     volumes:
       - ./backend/logs:/usr/src/app/logs
