@@ -21,6 +21,12 @@
         var: output.stdout_lines
       when: output is defined
 
+    - name: Stop docker containers
+      command: docker-compose -f docker-compose.yml stop
+
+    - name: Remove docker containers
+      command: docker-compose -f docker-compose.yml rm -f
+
     - name: Create docker containers
       command: docker-compose -f docker-compose.yml up --no-start
 
