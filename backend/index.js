@@ -1,10 +1,25 @@
-
+const fs = require('fs');
+const yaml = require('js-yaml');
 global.foodData = require('./db')(function call(err, data, CatData) {
   // console.log(data)
   if(err) console.log(err);
   global.foodData = data;
-  global.foodCategory = CatData;
+  global.food_category2 = CatData;
 })
+
+const environment = process.env.NODE_ENV || 'development';
+const configPath = './env-local.yaml';
+const configFile = fs.readFileSync(configPath, 'utf8');
+const config = yaml.load(configFile);
+
+const { PORT, MONGODB_URI, TEST_MONGODB_URI } = config[environment];
+
+if (!MONGODB_URI && environment !== 'test') {
+  console.log('MongoDB URI is missing.');
+  process.exit(1);
+}
+
+const mongoDBURI = environment === 'test' ? TEST_MONGODB_URI : MONGODB_URI;
 
 const express = require('express')
 const app = express()
@@ -20,12 +35,16 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Backend is running...')
 })
 
 app.use('/api/auth', require('./Routes/Auth'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}`)
-})
+if(environment !== 'test') {
+  const port = PORT || 5000;
+  app.listen(port, () => {
+    console.log(`App listening on http://localhost:${port}`)
+  })
+}
 
+module.exports = app;

@@ -56,7 +56,8 @@ export default function Signup() {
 
     }
     else {
-      alert("Enter Valid Credentials")
+      // check which error occurred and display accordingly
+      alert(json.error)
     }
   }
 

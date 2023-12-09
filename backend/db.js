@@ -1,3 +1,5 @@
+// const express = require('express');
+// const app_db = express.Router();
 const mongoose = require('mongoose')
 // const mongoDbClient = require("mongodb").MongoClient
 // testing
@@ -9,7 +11,7 @@ module.exports = function (callback) {
         if (err) console.log("---" + err)
         else {
             // var database =
-            console.log("connected to mongo")
+            console.log("Connected to MongoDB successfully.")
             const foodCollection = await mongoose.connection.db.collection("food_items");
             foodCollection.find({}).toArray(async function (err, data) {
                 const categoryCollection = await mongoose.connection.db.collection("food_category");
@@ -25,3 +27,5 @@ module.exports = function (callback) {
         }
     })
 };
+
+// module.exports = app_db;

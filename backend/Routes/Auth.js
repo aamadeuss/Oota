@@ -22,9 +22,10 @@ router.post('/createuser', [
         return res.status(400).json({ success, errors: errors.array() })
     }
     // console.log(req.body)
-    // let user = await User.findOne({email:req.body.email})
+    let user = await User.findOne({email:req.body.email})
     const salt = await bcrypt.genSalt(10)
     let securePass = await bcrypt.hash(req.body.password, salt);
+    if(user) return res.status(400).json({error:"User already exists"})
     try {
         await User.create({
             name: req.body.name,
@@ -40,7 +41,8 @@ router.post('/createuser', [
             }
             const authToken = jwt.sign(data, jwtSecret);
             success = true
-            res.json({ success, authToken })
+            // res.send("User registration successful")
+            res.status(200).json({ success, authToken })
         })
             .catch(err => {
                 console.log(err);
@@ -66,12 +68,12 @@ router.post('/login', [
     try {
         let user = await User.findOne({ email });  //{email:email} === {email}
         if (!user) {
-            return res.status(400).json({ success, error: "Try Logging in with correct credentials" });
+            return res.status(400).json({ success, error: "Try logging in with correct credentials" });
         }
 
         const pwdCompare = await bcrypt.compare(password, user.password); // this return true false.
         if (!pwdCompare) {
-            return res.status(400).json({ success, error: "Try Logging in with correct credentials" });
+            return res.status(400).json({ success, error: "Try logging in with correct credentials" });
         }
         const data = {
             user: {
@@ -80,7 +82,7 @@ router.post('/login', [
         }
         success = true;
         const authToken = jwt.sign(data, jwtSecret);
-        res.json({ success, authToken })
+        res.status(200).json({ success, authToken })
 
 
     } catch (error) {
@@ -135,7 +137,7 @@ router.post('/foodData', async (req, res) => {
         // console.log( JSON.stringify(global.foodData))
         // const userId = req.user.id;
         // await database.listCollections({name:"food_items"}).find({});
-        res.send([global.foodData, global.foodCategory])
+        res.send([global.foodData, global.food_category2])
     } catch (error) {
         console.error(error.message)
         res.send("Server Error")
