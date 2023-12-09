@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Arshdeep Singh",
+  "author": "Ayushmaan Singh",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
