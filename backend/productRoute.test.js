@@ -4,7 +4,7 @@ const app = require('./index');
 const data = require('./db');
 let server;
 
-orderPort = 5000;
+orderPort = 5001;
 
 beforeAll( async () => {
     server = app.listen(orderPort, () => {
