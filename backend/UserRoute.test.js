@@ -20,9 +20,15 @@ afterEach(async () => {
     }
 })
 
+  // Helper function to generate a random email address
+  function generateRandomEmail() {
+    const timestamp = new Date().getTime();
+    return `user${timestamp}@example.com`;
+}
+
 it('should register a new user', async () => {
     const email = generateRandomEmail(); // Generate a random email address
-    const response = await request(app) // Use the server instance instead of app
+    const response = await request(server) // Use the server instance instead of app
       .post('/api/users/createuser')
       .send({
         name: 'John Doe',
@@ -35,14 +41,9 @@ it('should register a new user', async () => {
     expect(response.body.success).toBe(true);
 });
 
-  // Helper function to generate a random email address
-function generateRandomEmail() {
-    const timestamp = new Date().getTime();
-    return `user${timestamp}@example.com`;
-}
 
 it('should not register a new user with an existing email address', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/api/users/createuser')
       .send({
         name: 'Jane Doe',
@@ -57,7 +58,7 @@ it('should not register a new user with an existing email address', async () => 
 
 // Test login route
 it('should log in a user with valid credentials', async () => {
-    const response = await request(app) // Use the server instance instead of app
+    const response = await request(server) // Use the server instance instead of app
       .post('/api/users/login')
       .send({
         email: 'a@a.com',
@@ -69,7 +70,7 @@ it('should log in a user with valid credentials', async () => {
   });
   
   it('should return an error with invalid credentials', async () => {
-    const response = await request(app) // Use the server instance instead of app
+    const response = await request(server) // Use the server instance instead of app
       .post('/api/users/login')
       .send({
         email: 'john@example.com',
