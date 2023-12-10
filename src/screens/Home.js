@@ -6,21 +6,45 @@ import Navbar from '../components/Navbar'
 export default function Home() {
   const [foodCat, setFoodCat] = useState([])
   const [foodItems, setFoodItems] = useState([])
+  const [imageLinks, setImageLinks] = useState({});
   const [search, setSearch] = useState('')
+  const getImageLink = async (name) => {
+    // let response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${name}&client_id=KZ9KJZwDk4Z8Xn1kH9g9f1Q1g3X2h8Q6Z3QXvZ5F6tA`)
+    // response = await response.json()
+    // return response.results[0].urls.small
+    const s = name.split(" ").join("+")
+    const q = s.split("/").join("+")
+    const img = await fetch(`https://pixabay.com/api/?key=41176730-0c35b471c01b453c21ac4ebac&q=${q}&image_type=photo`)
+    const imgData = await img.json()
+    if(imgData.hits.length === 0){
+      return "https://source.unsplash.com/random/900x700/?food"
+    }
+    return imgData.hits[0].previewURL
+  }
   const loadFoodItems = async () => {
-    let response = await fetch("http://localhost:5000/api/auth/foodData", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+    try{  
+      let response = await fetch("http://localhost:5000/api/auth/foodData", {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
 
-    });
-    response = await response.json()
-    // console.log(response[1][0].CategoryName)
-    setFoodItems(response[0])
-    setFoodCat(response[1])
+      });
+      response = await response.json()
+      // console.log(response[1][0].CategoryName)
+      setFoodItems(response[0])
+      setFoodCat(response[1])
+      const links = {};
+      for (const filterItem of response[0]) {
+        const link = await getImageLink(filterItem.name);
+        links[filterItem.name] = link;
+      }
+      setImageLinks(links);
+  }catch (error) {
+    console.error(error);
+  }
   }
 
   useEffect(() => {
@@ -81,8 +105,8 @@ export default function Home() {
                       .map(filterItems => {
                         return (
                           <div key={filterItems.id} className='col-12 col-md-6 col-lg-3'>
-                            {console.log(filterItems.url)}
-                            <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
+                            {getImageLink}
+                            <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={imageLinks[filterItems.name]} ></Card>
                           </div>
                         )
                       }) : <div> No Such Data </div>

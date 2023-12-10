@@ -1,23 +1,20 @@
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatchCart, useCart } from './ContextReducer'
 // import { Dropdown, DropdownButton } from 'react-bootstrap';
 export default function Card(props) {
 
-  // here we are sending props are argument in the function cards, since we want to read the name of the cared form the database
+  // here we are sending props are argument in the function cards, since we want to read the name of the card from the database
   let data = useCart();
 
   let navigate = useNavigate()
   const [qty, setQty] = useState(1)
-  const priceRef = useRef();
   // const [btnEnable, setBtnEnable] = useState(false);
   // let totval = 0
   // let price = Object.values(options).map((value) => {
   //   return parseInt(value, 10);
   // });
-  let options = props.options;
-  let priceOptions = Object.keys(options);
   let foodItem = props.item;
   const dispatch = useDispatchCart();
   const handleClick = () => {
