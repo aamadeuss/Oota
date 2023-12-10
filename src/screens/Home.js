@@ -66,27 +66,27 @@ export default function Home() {
       </div>
       <div className='container'> {/* boootstrap is mobile first */}
         {
-          foodCat !== []
+          foodCat.length !== 0
             ? foodCat.map((data) => {
               return (
                 // justify-content-center
                 <div className='row mb-3'>
                   <div key={data.id} className='fs-3 m-3'>
-                    {data.CategoryName} 
-                    // this is to reprensent all the catogeries in the data base
+                    {data.MealName}
                   </div>
                   <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
-                  { // now here we are picking the food items in that cateogery 
-                  foodItems !== [] ? foodItems.filter(
-                    (items) => (items.CategoryName === data.CategoryName) && (items.name.toLowerCase().includes(search.toLowerCase())))
-                    .map(filterItems => {
-                      return (
-                        <div key={filterItems.id} className='col-12 col-md-6 col-lg-3'>
-                          {console.log(filterItems.url)}
-                          <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
-                        </div>
-                      )
-                    }) : <div> No Such Data </div>}
+                  { // now here we are picking the food items in that category 
+                    foodItems.length !== 0 ? foodItems.filter(
+                      (items) => (items.MealName === data.MealName) && (items.name.toLowerCase().includes(search.toLowerCase())))
+                      .map(filterItems => {
+                        return (
+                          <div key={filterItems.id} className='col-12 col-md-6 col-lg-3'>
+                            {console.log(filterItems.url)}
+                            <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
+                          </div>
+                        )
+                      }) : <div> No Such Data </div>
+                  }
                 </div>
               )
             })

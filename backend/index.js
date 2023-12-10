@@ -1,10 +1,10 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-global.foodData = require('./db')(function call(err, data, CatData) {
+global.foodData = require('./db')(function call(err, data, MealData) {
   // console.log(data)
   if(err) console.log(err);
   global.foodData = data;
-  global.food_category2 = CatData;
+  global.mealName = MealData;
 })
 
 const environment = process.env.NODE_ENV || 'development';

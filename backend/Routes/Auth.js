@@ -19,7 +19,8 @@ router.post('/createuser', [
     let success = false
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ success, errors: errors.array() })
+        console.log(errors)
+        return res.status(400).json({ success, error: errors.array()[0].msg })
     }
     // console.log(req.body)
     let user = await User.findOne({email:req.body.email})
@@ -137,7 +138,7 @@ router.post('/foodData', async (req, res) => {
         // console.log( JSON.stringify(global.foodData))
         // const userId = req.user.id;
         // await database.listCollections({name:"food_items"}).find({});
-        res.send([global.foodData, global.food_category2])
+        res.status(200).send([global.foodData, global.mealName])
     } catch (error) {
         console.error(error.message)
         res.send("Server Error")
@@ -155,8 +156,6 @@ router.post('/orderData', async (req, res) => {
     console.log(eId)
     if (eId===null) {
         try {
-            console.log(data)
-            console.log("1231242343242354",req.body.email)
             await Order.create({
                 email: req.body.email,
                 order_data:[data]

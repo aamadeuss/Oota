@@ -19,8 +19,9 @@ const reducer = (state, action) => {
             arr.find((food, index) => {
                 if (food.id === action.id) {
                     console.log(food.qty, parseInt(action.qty), action.price + food.price)
-                    arr[index] = { ...food, qty: parseInt(action.qty) + food.qty, price: action.price + food.price }
+                    arr[index] = { ...food, qty: action.qty, price: action.price + food.price, img:action.img }
                 }
+                console.log(arr)
                 return arr
             })
             return arr

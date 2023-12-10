@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import Badge from "@material-ui/core/Badge";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import StarIcon from "@material-ui/icons/Star";
 import { useCart } from './ContextReducer';
 import Modal from '../Modal';
 import Cart from '../screens/Cart';
@@ -28,7 +28,7 @@ export default function Navbar(props) {
             <nav className="navbar navbar-expand-lg navbar-dark bg-success position-sticky"
                 style={{ boxShadow: "0px 10px 20px black", filter: 'blur(20)', position: "fixed", zIndex: "10", width: "100%" }}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand fs-1 fst-italic" to="/">GoFood</Link>
+                    <Link className="navbar-brand fs-1 fst-italic" to="/">Oota</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -39,7 +39,7 @@ export default function Navbar(props) {
                             </li>
                             {(localStorage.getItem("token")) ?
                                 <li className="nav-item">
-                                    <Link className="nav-link fs-5 mx-3 active" aria-current="page" to="/myorder" >My Orders</Link>  {/* index.css - nav-link color white */}
+                                    <Link className="nav-link fs-5 mx-3 active" aria-current="page" to="/myorder" >My Ratings</Link>  {/* index.css - nav-link color white */}
                                 </li> : ""}
                         </ul>
                         {(!localStorage.getItem("token")) ?
@@ -51,9 +51,9 @@ export default function Navbar(props) {
 
                                 <div className="btn bg-white text-success mx-2 " onClick={loadCart}>
                                     <Badge color="secondary" badgeContent={items.length} >
-                                        <ShoppingCartIcon />
+                                        <StarIcon />
                                     </Badge>
-                                    Cart
+                                    Ratings
                                 </div>
 
                                 {cartView ? <Modal onClose={() => setCartView(false)}><Cart></Cart></Modal> : ""}
