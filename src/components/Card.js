@@ -72,8 +72,8 @@ export default function Card(props) {
         <img src={props.ImgSrc} className="card-img-top" alt="..." style={{ height: "120px", objectFit: "fill" }} />
         <div className="card-body">
           <h5 className="card-title">{props.foodName}</h5>
-          <div className="d-flex justify-content-between align-items-center">
-            <small className="text-muted">{props.options.half}</small>
+          <div className="d-flex justify-content-between align-items-center" data-testid="veg-indicator">
+            <small className="text-muted">{props.options.isVeg}</small>
           </div>
           <div className='container w-100 p-0' style={{ height: "38px" }}>
             <select className="m-2 h-100 w-20 bg-success text-black rounded" style={{ select: "#FF0000" }} onClick={handleClick} onChange={handleQty}>
