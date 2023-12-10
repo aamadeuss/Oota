@@ -6,7 +6,7 @@ global.foodData = require('./db')(function call(err, data, MealData) {
   global.foodData = data;
   global.mealName = MealData;
 })
-
+//testing
 const environment = process.env.NODE_ENV || 'development';
 const configPath = './env-local.yaml';
 const configFile = fs.readFileSync(configPath, 'utf8');
