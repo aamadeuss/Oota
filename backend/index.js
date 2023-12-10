@@ -1,5 +1,22 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+const express = require('express')
+const app = express();
+const morgan = require('morgan');
+const winston = require('winston');
+morgan.token('data', request => {
+if(request.body.password)
+  request.body.password = '';
+return JSON.stringify(request.body)
+});
+
+const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
+
+app.use(morgan('{"timestamp":":date[iso]","method":":method","url":":url","status_code":":status","response_time":":response-time","content_length": ":res[content-length]"}', {
+  stream: accessLogStream,
+  immediate: false
+ }));
+
 global.foodData = require('./db')(function call(err, data, MealData) {
   // console.log(data)
   if(err) console.log(err);
@@ -22,8 +39,6 @@ if (!MONGODB_URI && environment !== 'test') {
 
 const mongoDBURI = environment === 'test' ? TEST_MONGODB_URI : MONGODB_URI;
 
-const express = require('express')
-const app = express()
 const port = 5000
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
