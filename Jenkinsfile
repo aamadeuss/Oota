@@ -27,6 +27,8 @@ pipeline{
                 sh '''
                     cd backend
                     npm ci
+                    npm install morgan
+                    npm install winston
                     npx jest --forceExit
                 '''
             }
