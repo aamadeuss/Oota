@@ -6,7 +6,7 @@ const data = require('./db');
 
 let server;
 app.use('/api/users', route);
-userPort = 5000;
+userPort = 9000;
 
 beforeAll( async () => {
     server = app.listen(userPort, () => {
